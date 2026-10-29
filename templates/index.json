@@ -1,13 +1,26 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
       "type": "hero",
       "settings": {
+        "image": "shopify://shop_images/Nevavik_logo_01.jpg",
         "full_height": true,
         "kicker": "DROP 01 — COMING SOON",
         "heading": "Névavik",
         "subheading": "Streetwear and training wear made for life beyond the gym.",
-        "cta_label": "Comprar"
+        "cta_label": "Comprar",
+        "cta_link": "",
+        "cta_secondary_label": "",
+        "cta_secondary_link": ""
       }
     },
     "intro": {
@@ -16,7 +29,8 @@
         "kicker": "[PLACEHOLDER]",
         "heading": "[PLACEHOLDER]",
         "text": "<p>[PLACEHOLDER]</p>",
-        "cta_label": "Comprar"
+        "cta_label": "Comprar",
+        "cta_link": ""
       }
     },
     "collections": {
@@ -25,23 +39,30 @@
         "streetwear": {
           "type": "collection",
           "settings": {
+            "collection": "",
             "label": "Comprar"
           }
         },
         "training": {
           "type": "collection",
           "settings": {
+            "collection": "",
             "label": "Comprar"
           }
         },
         "caps": {
           "type": "collection",
           "settings": {
+            "collection": "",
             "label": "Comprar"
           }
         }
       },
-      "block_order": ["streetwear", "training", "caps"],
+      "block_order": [
+        "streetwear",
+        "training",
+        "caps"
+      ],
       "settings": {
         "kicker": "[PLACEHOLDER]",
         "heading": "[PLACEHOLDER]"
@@ -51,9 +72,16 @@
       "type": "featured-collection",
       "settings": {
         "kicker": "[PLACEHOLDER]",
+        "heading": "",
+        "collection": "",
         "products_to_show": 4
       }
     }
   },
-  "order": ["hero", "intro", "collections", "featured"]
+  "order": [
+    "hero",
+    "intro",
+    "collections",
+    "featured"
+  ]
 }
