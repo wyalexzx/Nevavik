@@ -12,7 +12,7 @@
     "settings": [
       {
         "type": "paragraph",
-        "content": "Logo, favicon y nombre visibles. El copy de marca se edita en las secciones del editor, no aquí."
+        "content": "Logo, favicon y nombre visibles. El copy de marca se edita en las secciones del editor, no aquí. Si el logo está vacío, la cabecera usa assets/logo.jpg del tema."
       },
       {
         "type": "image_picker",

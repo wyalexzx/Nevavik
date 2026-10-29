@@ -11,9 +11,9 @@
       {% render 'icon', name: 'menu' %}
     </button>
 
-    <a class="wordmark" href="{{ routes.root_url }}" aria-label="{{ shop.name }}">
-      {%- if settings.logo != blank -%}
-        <span class="wordmark__logo-wrap" style="max-width: {{ settings.logo_width }}px">
+    <a class="wordmark" href="{{ routes.root_url }}" aria-label="{{ shop.name | escape }}">
+      <span class="wordmark__logo-wrap" style="max-width: {{ settings.logo_width }}px">
+        {%- if settings.logo != blank -%}
           {{
             settings.logo
             | image_url: width: 400
@@ -22,10 +22,17 @@
               widths: '80, 120, 160, 240, 320',
               alt: shop.name
           }}
-        </span>
-      {%- else -%}
-        <span class="wordmark__text">{{ shop.name }}</span>
-      {%- endif -%}
+        {%- else -%}
+          <img
+            class="wordmark__logo"
+            src="{{ 'logo.jpg' | asset_url }}"
+            alt="{{ shop.name | escape }}"
+            width="{{ settings.logo_width }}"
+            height="{{ settings.logo_width }}"
+            loading="eager"
+          >
+        {%- endif -%}
+      </span>
     </a>
 
     <nav class="nav-desktop" aria-label="{{ 'header.menu' | t }}">

@@ -282,11 +282,15 @@ h2,
 
 .wordmark__logo-wrap {
   display: block;
+  line-height: 0;
 }
 
 .wordmark__logo {
+  width: auto;
   height: auto;
-  width: 100%;
+  max-width: 100%;
+  max-height: calc(var(--header-height) - 0.5rem);
+  object-fit: contain;
 }
 
 .nav-desktop {
