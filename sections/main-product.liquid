@@ -58,7 +58,13 @@
     </div>
 
     <div class="product-info">
-      <p class="eyebrow">{{ product.vendor | default: shop.name | escape }}</p>
+      <p class="eyebrow">
+        {%- if product.vendor != blank -%}
+          {{ product.vendor | escape }}
+        {%- else -%}
+          {% render 'brand-name' %}
+        {%- endif -%}
+      </p>
       <h1 class="product-info__title">{{ product.title | escape }}</h1>
       <div class="product-info__price" data-price>
         {% render 'price', product: product, use_variant: true %}

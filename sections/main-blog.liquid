@@ -2,7 +2,7 @@
   <section class="blog-page section-pad" {{ section.shopify_attributes }}>
     <div class="page-width">
       <header class="section-heading">
-        <p class="eyebrow">{{ shop.name }}</p>
+        <p class="eyebrow">{% render 'brand-name' %}</p>
         <h1>{{ blog.title | escape }}</h1>
       </header>
       {%- if blog.articles.size > 0 -%}

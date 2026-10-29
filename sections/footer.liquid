@@ -1,7 +1,7 @@
 <footer class="site-footer" {{ section.shopify_attributes }}>
   <div class="site-footer__grid page-width">
     <div class="site-footer__brand">
-      <p class="eyebrow">{{ shop.name }}</p>
+      <p class="eyebrow">{% render 'brand-name' %}</p>
       <p class="site-footer__heading">{{ section.settings.heading | escape }}</p>
     </div>
 
@@ -45,7 +45,8 @@
   </div>
   <div class="site-footer__legal page-width">
     {%- assign copyright_year = 'now' | date: '%Y' -%}
-    <p>{{ 'footer.copyright' | t: year: copyright_year, shop_name: shop.name }}</p>
+    {%- assign brand_name = 'general.shop_name' | t -%}
+    <p>{{ 'footer.copyright' | t: year: copyright_year, shop_name: brand_name }}</p>
   </div>
 </footer>
 

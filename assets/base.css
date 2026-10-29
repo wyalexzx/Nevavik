@@ -1,4 +1,4 @@
-/* Nevavik — athletic editorial. Mobile-first. Tokens from theme settings. */
+/* Névavik — athletic editorial. Mobile-first. Tokens from theme settings. */
 *,
 *::before,
 *::after {
@@ -126,6 +126,19 @@ h3,
   text-transform: uppercase;
   line-height: 0.95;
   margin: 0;
+}
+
+h1.hero__title {
+  text-transform: none;
+  letter-spacing: 0;
+  font-kerning: none;
+  font-variant-ligatures: none;
+  font-feature-settings: "liga" 0, "calt" 0, "kern" 0;
+}
+
+.brand-name {
+  text-transform: none;
+  letter-spacing: 0.08em;
 }
 
 h1,
@@ -349,8 +362,8 @@ h2,
 }
 
 .nav-drawer__kicker {
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-transform: none;
   font-size: 0.75rem;
 }
 

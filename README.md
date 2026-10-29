@@ -1,6 +1,6 @@
-# Nevavik
+# Névavik
 
-WEB-Site for Nevavik Shop
+WEB-Site for Névavik Shop
 
 Tema **Shopify Online Store 2.0** nativo (Liquid + HTML + CSS + JS + plantillas JSON). Shopify es dueño de productos, variantes, inventario, carrito y checkout. No hay Hydrogen, React ni checkout propio.
 
@@ -61,6 +61,7 @@ No uses Theme Kit (`theme watch` / `config.yml`).
 4. **Políticas** de la tienda (envío, reembolsos, privacidad) — el pie las lista solas.
 5. Ajustes del tema: logo (opcional; si no hay uno en el editor se muestra `assets/logo.jpg`), acento, URLs de redes.
 6. Idioma de la tienda: español para usar `es.json` en la UI.
+7. **Nombre de la tienda** en Admin → **Settings → Store details → Store name**: cámbialo a **Névavik**. Hoy `shop.name` sigue saliendo de Shopify (p. ej. “My Store”) y aparece en pestaña del navegador, checkout y Open Graph. El tema no puede renombrar la tienda. Cabecera (estrella) y kickers visibles ya usan Névavik.
 
 ## Fuera de alcance
 
