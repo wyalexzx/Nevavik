@@ -1,6 +1,6 @@
-# Nevavik
+# Névavik
 
-WEB-Site for Nevavik Shop
+WEB-Site for Névavik Shop
 
 Tema **Shopify Online Store 2.0** nativo (Liquid + HTML + CSS + JS + plantillas JSON). Shopify es dueño de productos, variantes, inventario, carrito y checkout. No hay Hydrogen, React ni checkout propio.
 
@@ -15,7 +15,7 @@ El copy de marca, fotos de campaña, políticas y redes no están inventados: en
 - Páginas (Nosotros, contacto, envíos, devoluciones) vía **Admin → Páginas** + sección `main-page`. Plantilla alternativa `page.contact` con formulario.
 - Cabecera/pie con menús de Shopify y redes vacías hasta tener URLs.
 - Locales de UI: `locales/en.default.json` y `locales/es.json`.
-- Ajustes de tema: logo, paleta (negro / blanco / neutros + un acento), tipografías.
+- Ajustes de tema: logo (si está vacío, la cabecera usa `assets/logo.jpg`), paleta (negro / blanco / neutros + un acento), tipografías.
 
 ## Cómo previsualizar
 
@@ -59,8 +59,9 @@ No uses Theme Kit (`theme watch` / `config.yml`).
 2. **Colecciones**: streetwear, training, gorras — asígnalas en Inicio → Focos de colección / Colección destacada.
 3. **Páginas** con el copy real; para contacto, asigna la plantilla `contact`.
 4. **Políticas** de la tienda (envío, reembolsos, privacidad) — el pie las lista solas.
-5. Ajustes del tema: logo, acento, URLs de redes.
+5. Ajustes del tema: logo (opcional; si no hay uno en el editor se muestra `assets/logo.jpg`), acento, URLs de redes.
 6. Idioma de la tienda: español para usar `es.json` en la UI.
+7. **Nombre de la tienda** en Admin → **Settings → Store details → Store name**: cámbialo a **Névavik**. Hoy `shop.name` sigue saliendo de Shopify (p. ej. “My Store”) y aparece en pestaña del navegador, checkout y Open Graph. El tema no puede renombrar la tienda. Cabecera (estrella) y kickers visibles ya usan Névavik.
 
 ## Fuera de alcance
 

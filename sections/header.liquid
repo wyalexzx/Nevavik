@@ -11,21 +11,29 @@
       {% render 'icon', name: 'menu' %}
     </button>
 
-    <a class="wordmark" href="{{ routes.root_url }}" aria-label="{{ shop.name }}">
-      {%- if settings.logo != blank -%}
-        <span class="wordmark__logo-wrap" style="max-width: {{ settings.logo_width }}px">
+    {%- assign brand_name = 'general.shop_name' | t -%}
+    <a class="wordmark" href="{{ routes.root_url }}" aria-label="{{ brand_name | escape }}">
+      <span class="wordmark__logo-wrap" style="max-width: {{ settings.logo_width }}px">
+        {%- if settings.logo != blank -%}
           {{
             settings.logo
             | image_url: width: 400
             | image_tag:
               class: 'wordmark__logo',
               widths: '80, 120, 160, 240, 320',
-              alt: shop.name
+              alt: brand_name
           }}
-        </span>
-      {%- else -%}
-        <span class="wordmark__text">{{ shop.name }}</span>
-      {%- endif -%}
+        {%- else -%}
+          <img
+            class="wordmark__logo"
+            src="{{ 'logo.jpg' | asset_url }}"
+            alt="{{ brand_name | escape }}"
+            width="{{ settings.logo_width }}"
+            height="{{ settings.logo_width }}"
+            loading="eager"
+          >
+        {%- endif -%}
+      </span>
     </a>
 
     <nav class="nav-desktop" aria-label="{{ 'header.menu' | t }}">
@@ -68,7 +76,7 @@
   <div class="nav-drawer" id="NavDrawer" data-menu-drawer hidden>
     <div class="nav-drawer__panel" role="dialog" aria-modal="true" aria-label="{{ 'header.menu' | t }}">
       <div class="nav-drawer__top">
-        <p class="nav-drawer__kicker">{{ shop.name }}</p>
+        <p class="nav-drawer__kicker">{% render 'brand-name' %}</p>
         <button class="icon-button" type="button" data-menu-close aria-label="{{ 'accessibility.close' | t }}">
           {% render 'icon', name: 'close' %}
         </button>

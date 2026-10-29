@@ -4,7 +4,7 @@
       "page": "Page {{ page }}"
     },
     "placeholder": "[PLACEHOLDER]",
-    "shop_name": "Nevavik"
+    "shop_name": "Névavik"
   },
   "accessibility": {
     "skip_to_content": "Skip to content",

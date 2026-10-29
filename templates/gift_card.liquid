@@ -12,9 +12,10 @@
   </head>
   <body class="gift-card-page">
     <main class="page-width section-pad">
-      <p class="eyebrow">{{ shop.name }}</p>
+      {%- assign brand_name = 'general.shop_name' | t -%}
+      <p class="eyebrow">{{ brand_name }}</p>
       {%- assign gift_balance = gift_card.balance | money -%}
-      <h1>{{ 'gift_card.issued' | t: value: gift_balance, shop: shop.name }}</h1>
+      <h1>{{ 'gift_card.issued' | t: value: gift_balance, shop: brand_name }}</h1>
       {%- if gift_card.enabled == false or gift_card.expired -%}
         <p>
           {%- if gift_card.enabled == false -%}

@@ -1,6 +1,6 @@
 <section class="page-content section-pad" {{ section.shopify_attributes }}>
   <article class="page-content__article page-width">
-    <p class="eyebrow">{{ shop.name }}</p>
+    <p class="eyebrow">{% render 'brand-name' %}</p>
     <h1>{{ page.title | escape }}</h1>
     {%- if page.content != blank -%}
       <div class="rte">{{ page.content }}</div>

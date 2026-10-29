@@ -1,7 +1,7 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "Nevavik",
+    "theme_name": "Névavik",
     "theme_version": "1.0.0",
     "theme_author": "Alejandro Marquez",
     "theme_documentation_url": "https://github.com/wyalexzx/Nevavik",
@@ -12,7 +12,7 @@
     "settings": [
       {
         "type": "paragraph",
-        "content": "Logo, favicon y nombre visibles. El copy de marca se edita en las secciones del editor, no aquí."
+        "content": "Logo, favicon y nombre visibles. El copy de marca se edita en las secciones del editor, no aquí. Si el logo está vacío, la cabecera usa assets/logo.jpg del tema."
       },
       {
         "type": "image_picker",

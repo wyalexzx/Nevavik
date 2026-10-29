@@ -4,11 +4,10 @@
       "type": "hero",
       "settings": {
         "full_height": true,
-        "kicker": "[PLACEHOLDER]",
-        "heading": "[PLACEHOLDER]",
-        "subheading": "[PLACEHOLDER]",
-        "cta_label": "Comprar",
-        "cta_secondary_label": "Comprar"
+        "kicker": "DROP 01 — COMING SOON",
+        "heading": "Névavik",
+        "subheading": "Streetwear and training wear made for life beyond the gym.",
+        "cta_label": "Comprar"
       }
     },
     "intro": {
