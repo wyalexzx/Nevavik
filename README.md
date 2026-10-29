@@ -19,7 +19,7 @@ El copy de marca, fotos de campaña, políticas y redes no están inventados: en
 
 ## Cómo previsualizar
 
-No hay tienda `.myshopify.com` en este repo. `shopify.theme.toml` deja `store = "[PLACEHOLDER]"` hasta que exista una tienda real (Partner o de producción). **No inventes** el dominio.
+Tienda: `y0mbc3-7d.myshopify.com` (Admin: https://admin.shopify.com/store/y0mbc3-7d). Está en `shopify.theme.toml`. No commitees tokens.
 
 ### A. ZIP en Admin (sin CLI)
 
@@ -29,21 +29,19 @@ No hay tienda `.myshopify.com` en este repo. `shopify.theme.toml` deja `store = 
 
 ### B. Shopify CLI (recomendado)
 
-Instala [Shopify CLI](https://shopify.dev/docs/api/shopify-cli) 3.x (`shopify version`). En la raíz del repo, sustituye `[PLACEHOLDER]` en `shopify.theme.toml` por el subdominio real, o pásalo en el comando:
+Instala [Shopify CLI](https://shopify.dev/docs/api/shopify-cli) 3.x (`shopify version`). En la raíz del repo:
 
 ```bash
-shopify theme dev --store TU-TIENDA.myshopify.com
+shopify theme dev --store y0mbc3-7d.myshopify.com
 ```
 
 Preview local con recarga. Para subir un tema **no publicado**:
 
 ```bash
-shopify theme push --unpublished
+shopify theme push --unpublished --store y0mbc3-7d.myshopify.com
 ```
 
 Luego: Admin → Temas → tema no publicado → **Vista previa**. Publicar solo cuando el dueño lo pida.
-
-No commitees tokens. Cuando tengas store real, actualiza `shopify.theme.toml`.
 
 ### C. Partner Dashboard
 
