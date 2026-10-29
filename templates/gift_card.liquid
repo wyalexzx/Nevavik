@@ -1,0 +1,35 @@
+{% layout none %}
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="robots" content="noindex,nofollow">
+    {%- assign gift_value = gift_card.initial_value | money -%}
+    <title>{{ 'gift_card.issued' | t: value: gift_value, shop: shop.name }}</title>
+    {{ 'base.css' | asset_url | stylesheet_tag }}
+    {{ content_for_header }}
+  </head>
+  <body class="gift-card-page">
+    <main class="page-width section-pad">
+      <p class="eyebrow">{{ shop.name }}</p>
+      {%- assign gift_balance = gift_card.balance | money -%}
+      <h1>{{ 'gift_card.issued' | t: value: gift_balance, shop: shop.name }}</h1>
+      {%- if gift_card.enabled == false or gift_card.expired -%}
+        <p>
+          {%- if gift_card.enabled == false -%}
+            {{ 'gift_card.disabled' | t }}
+          {%- elsif gift_card.expired -%}
+            {{ 'gift_card.expired' | t }}
+          {%- endif -%}
+        </p>
+      {%- else -%}
+        {%- if gift_card.expired != true and gift_card.expires_on -%}
+          <p>{{ 'gift_card.expires' | t: expiry: gift_card.expires_on | date: '%d.%m.%Y' }}</p>
+        {%- endif -%}
+        <p class="gift-card-page__code">{{ 'gift_card.code' | t }}: {{ gift_card.code | format_code }}</p>
+        <a class="btn btn--accent" href="{{ shop.url }}">{{ 'gift_card.shop_link' | t }}</a>
+      {%- endif -%}
+    </main>
+  </body>
+</html>

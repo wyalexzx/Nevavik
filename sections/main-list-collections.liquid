@@ -1,0 +1,43 @@
+<section class="list-collections section-pad" {{ section.shopify_attributes }}>
+  <div class="page-width">
+    <header class="section-heading">
+      <p class="eyebrow">{{ shop.name }}</p>
+      <h1>{{ 'collection.all' | t }}</h1>
+    </header>
+    <div class="spotlight__grid">
+      {%- for collection in collections -%}
+        {%- unless collection.handle == 'frontpage' -%}
+          <article class="spotlight-card">
+            <a class="spotlight-card__link" href="{{ collection.url }}">
+              <div class="spotlight-card__media">
+                {%- if collection.featured_image -%}
+                  {{
+                    collection.featured_image
+                    | image_url: width: 1200
+                    | image_tag: loading: 'lazy', alt: collection.title
+                  }}
+                {%- else -%}
+                  <span class="media-frame__placeholder">{{ 'onboarding.no_image' | t }}</span>
+                {%- endif -%}
+              </div>
+              <div class="spotlight-card__body">
+                <h2>{{ collection.title | escape }}</h2>
+                <p>{{ 'collection.products_count' | t: count: collection.all_products_count }}</p>
+              </div>
+            </a>
+          </article>
+        {%- endunless -%}
+      {%- else -%}
+        <p class="placeholder-copy">{{ 'onboarding.no_collection' | t }}</p>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Lista de colecciones",
+  "tag": "section",
+  "class": "section-main-list-collections"
+}
+{% endschema %}

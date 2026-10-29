@@ -1,0 +1,46 @@
+{%- paginate collection.products by section.settings.products_per_page -%}
+  <section class="collection-page section-pad" {{ section.shopify_attributes }}>
+    <header class="collection-page__header page-width">
+      <p class="eyebrow">{{ 'collection.all' | t }}</p>
+      <h1>{{ collection.title | escape }}</h1>
+      {%- if collection.description != blank -%}
+        <div class="rte">{{ collection.description }}</div>
+      {%- endif -%}
+      <p class="collection-page__count">
+        {{ 'collection.products_count' | t: count: collection.products_count }}
+      </p>
+    </header>
+
+    {%- if collection.products.size > 0 -%}
+      <div class="product-grid page-width">
+        {%- for product in collection.products -%}
+          {% render 'product-card', card_product: product, index: forloop.index %}
+        {%- endfor -%}
+      </div>
+      <div class="page-width">
+        {% render 'pagination', paginate: paginate %}
+      </div>
+    {%- else -%}
+      <p class="placeholder-copy page-width">{{ 'collection.empty' | t }}</p>
+    {%- endif -%}
+  </section>
+{%- endpaginate -%}
+
+{% schema %}
+{
+  "name": "Colección",
+  "tag": "section",
+  "class": "section-main-collection",
+  "settings": [
+    {
+      "type": "range",
+      "id": "products_per_page",
+      "min": 8,
+      "max": 36,
+      "step": 4,
+      "label": "Productos por página",
+      "default": 16
+    }
+  ]
+}
+{% endschema %}

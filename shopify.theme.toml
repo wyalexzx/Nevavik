@@ -1,0 +1,6 @@
+# Shopify CLI 3.x environment for this theme.
+# Store provided by Alejandro: Admin https://admin.shopify.com/store/y0mbc3-7d
+# Do not commit access tokens.
+
+[environments.development]
+store = "y0mbc3-7d.myshopify.com"

@@ -1,0 +1,35 @@
+{% style %}
+  {{ settings.type_header_font | font_face: font_display: 'swap' }}
+  {{ settings.type_body_font | font_face: font_display: 'swap' }}
+
+  :root {
+    --font-heading-family: {{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};
+    --font-heading-style: {{ settings.type_header_font.style }};
+    --font-heading-weight: {{ settings.type_header_font.weight }};
+    --font-body-family: {{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};
+    --font-body-style: {{ settings.type_body_font.style }};
+    --font-body-weight: {{ settings.type_body_font.weight }};
+
+    --color-bg: {{ settings.color_background }};
+    --color-fg: {{ settings.color_foreground }};
+    --color-muted: {{ settings.color_muted }};
+    --color-accent: {{ settings.color_accent }};
+    --color-accent-contrast: {{ settings.color_accent_contrast }};
+    --color-border: {{ settings.color_border }};
+    --color-surface: {{ settings.color_surface }};
+
+    --page-width: {{ settings.page_width }}px;
+    --gutter: clamp(1rem, 4vw, 2.25rem);
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.5rem;
+    --space-6: 2rem;
+    --space-7: 3rem;
+    --space-8: 4.5rem;
+    --header-height: 3.75rem;
+    --focus-ring: 2px solid var(--color-accent);
+    --focus-offset: 3px;
+  }
+{% endstyle %}

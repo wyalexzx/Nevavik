@@ -1,0 +1,13 @@
+.git
+.gitignore
+.github
+node_modules
+package.json
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+.theme-check.yml
+*.md
+.env
+.env.*
+.DS_Store

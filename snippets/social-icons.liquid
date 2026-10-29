@@ -1,0 +1,29 @@
+{%- comment -%}
+  Social URLs come from theme settings only. Empty values render [PLACEHOLDER].
+{%- endcomment -%}
+<ul class="social-list">
+  {%- assign has_social = false -%}
+  {%- if settings.social_instagram != blank -%}
+    {%- assign has_social = true -%}
+    <li><a class="social-list__link" href="{{ settings.social_instagram }}" rel="noopener noreferrer" target="_blank">{% render 'icon', name: 'instagram' %} <span>Instagram</span></a></li>
+  {%- endif -%}
+  {%- if settings.social_tiktok != blank -%}
+    {%- assign has_social = true -%}
+    <li><a class="social-list__link" href="{{ settings.social_tiktok }}" rel="noopener noreferrer" target="_blank">{% render 'icon', name: 'tiktok' %} <span>TikTok</span></a></li>
+  {%- endif -%}
+  {%- if settings.social_youtube != blank -%}
+    {%- assign has_social = true -%}
+    <li><a class="social-list__link" href="{{ settings.social_youtube }}" rel="noopener noreferrer" target="_blank">{% render 'icon', name: 'youtube' %} <span>YouTube</span></a></li>
+  {%- endif -%}
+  {%- if settings.social_facebook != blank -%}
+    {%- assign has_social = true -%}
+    <li><a class="social-list__link" href="{{ settings.social_facebook }}" rel="noopener noreferrer" target="_blank">{% render 'icon', name: 'facebook' %} <span>Facebook</span></a></li>
+  {%- endif -%}
+  {%- if settings.social_x != blank -%}
+    {%- assign has_social = true -%}
+    <li><a class="social-list__link" href="{{ settings.social_x }}" rel="noopener noreferrer" target="_blank">{% render 'icon', name: 'x' %} <span>X</span></a></li>
+  {%- endif -%}
+  {%- unless has_social -%}
+    <li class="placeholder-copy">{{ 'footer.social_missing' | t }}</li>
+  {%- endunless -%}
+</ul>

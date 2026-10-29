@@ -1,0 +1,16 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "settings": {}
+    },
+    "related": {
+      "type": "featured-collection",
+      "settings": {
+        "kicker": "[PLACEHOLDER]",
+        "products_to_show": 4
+      }
+    }
+  },
+  "order": ["main", "related"]
+}

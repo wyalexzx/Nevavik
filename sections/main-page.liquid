@@ -1,0 +1,25 @@
+<section class="page-content section-pad" {{ section.shopify_attributes }}>
+  <article class="page-content__article page-width">
+    <p class="eyebrow">{{ shop.name }}</p>
+    <h1>{{ page.title | escape }}</h1>
+    {%- if page.content != blank -%}
+      <div class="rte">{{ page.content }}</div>
+    {%- else -%}
+      <p class="placeholder-copy">[PLACEHOLDER]</p>
+    {%- endif -%}
+  </article>
+</section>
+
+{% schema %}
+{
+  "name": "Página",
+  "tag": "section",
+  "class": "section-main-page",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Usa páginas de Shopify (Nosotros, contacto, envíos, devoluciones). El contenido se edita en Admin → Páginas, no en el tema."
+    }
+  ]
+}
+{% endschema %}

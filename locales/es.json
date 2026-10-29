@@ -1,0 +1,141 @@
+{
+  "general": {
+    "meta": {
+      "page": "Página {{ page }}"
+    },
+    "placeholder": "[PLACEHOLDER]",
+    "shop_name": "Nevavik"
+  },
+  "accessibility": {
+    "skip_to_content": "Saltar al contenido",
+    "close": "Cerrar",
+    "menu": "Menú",
+    "search": "Buscar",
+    "cart": "Carrito",
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "play_video": "Reproducir vídeo",
+    "unit_price": "Precio unitario",
+    "vendor": "Marca",
+    "refresh": "Actualizar página"
+  },
+  "header": {
+    "menu": "Menú",
+    "search": "Buscar",
+    "cart": "Carrito",
+    "cart_count": {
+      "one": "{{ count }} artículo",
+      "other": "{{ count }} artículos"
+    },
+    "home": "Inicio"
+  },
+  "footer": {
+    "heading": "Pie de página",
+    "policies": "Políticas",
+    "explore": "Explorar",
+    "social": "Redes",
+    "social_missing": "[PLACEHOLDER]",
+    "copyright": "© {{ year }} {{ shop_name }}"
+  },
+  "hero": {
+    "default_heading": "[PLACEHOLDER]",
+    "default_subheading": "[PLACEHOLDER]",
+    "shop": "Comprar"
+  },
+  "product": {
+    "add_to_cart": "Añadir al carrito",
+    "sold_out": "Agotado",
+    "unavailable": "No disponible",
+    "quantity": "Cantidad",
+    "decrease": "Reducir cantidad",
+    "increase": "Aumentar cantidad",
+    "price": "Precio",
+    "regular_price": "Precio habitual",
+    "sale_price": "Precio de oferta",
+    "from_price": "Desde {{ price }}",
+    "tax_included": "Impuestos incluidos.",
+    "sku": "SKU",
+    "variant": "Variante",
+    "description": "Descripción",
+    "view": "Ver producto",
+    "media": "Galería del producto",
+    "thumbnail": "Ver imagen {{ index }}",
+    "on_sale": "Oferta",
+    "choose_option": "Elige {{ name }}"
+  },
+  "cart": {
+    "title": "Carrito",
+    "empty": "Tu carrito está vacío.",
+    "continue": "Seguir comprando",
+    "checkout": "Finalizar compra",
+    "update": "Actualizar",
+    "remove": "Quitar",
+    "subtotal": "Subtotal",
+    "note": "Nota del pedido",
+    "taxes_shipping": "Impuestos y envío se calculan en el checkout de Shopify.",
+    "quantity": "Cantidad",
+    "item": "Artículo",
+    "price": "Precio",
+    "total": "Total"
+  },
+  "collection": {
+    "empty": "Aún no hay productos en esta colección.",
+    "products_count": {
+      "one": "{{ count }} producto",
+      "other": "{{ count }} productos"
+    },
+    "view_all": "Ver todo",
+    "placeholder_title": "[PLACEHOLDER]",
+    "all": "Colecciones"
+  },
+  "search": {
+    "title": "Buscar",
+    "placeholder": "Buscar productos",
+    "submit": "Buscar",
+    "no_results": "Sin resultados para “{{ terms }}”.",
+    "results_with_count": {
+      "one": "{{ count }} resultado para “{{ terms }}”",
+      "other": "{{ count }} resultados para “{{ terms }}”"
+    }
+  },
+  "404": {
+    "title": "Página no encontrada",
+    "text": "Esa página no existe.",
+    "button": "Volver al inicio"
+  },
+  "password": {
+    "title": "Próximamente",
+    "heading": "[PLACEHOLDER]",
+    "login": "Entrar a la tienda con contraseña",
+    "password": "Contraseña",
+    "submit": "Entrar"
+  },
+  "contact": {
+    "name": "Nombre",
+    "email": "Correo",
+    "phone": "Teléfono",
+    "message": "Mensaje",
+    "send": "Enviar",
+    "success": "Gracias. Tu mensaje se envió.",
+    "error": "No se pudo enviar. Inténtalo de nuevo."
+  },
+  "blog": {
+    "empty": "Aún no hay artículos.",
+    "read": "Leer artículo"
+  },
+  "gift_card": {
+    "issued": "Aquí está tu tarjeta de regalo de {{ value }} para {{ shop }}",
+    "expires": "Caduca {{ expiry }}",
+    "code": "Código de canje",
+    "shop_link": "Empezar a comprar",
+    "add_to_apple_wallet": "Añadir a Apple Wallet",
+    "disabled": "Desactivada",
+    "expired": "Caducada"
+  },
+  "onboarding": {
+    "product_title": "[PLACEHOLDER]",
+    "collection_title": "[PLACEHOLDER]",
+    "no_collection": "Elige una colección de Shopify en el editor de temas.",
+    "no_image": "[PLACEHOLDER]"
+  }
+}
