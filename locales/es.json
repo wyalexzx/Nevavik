@@ -4,7 +4,7 @@
       "page": "Página {{ page }}"
     },
     "placeholder": "[PLACEHOLDER]",
-    "shop_name": "Névavik"
+    "shop_name": "Néravik"
   },
   "accessibility": {
     "skip_to_content": "Saltar al contenido",
