@@ -1,0 +1,36 @@
+{%- comment -%}
+  Renders a Shopify price. Expects: product (optional), variant or use_variant, price (money cents).
+{%- endcomment -%}
+{%- liquid
+  if use_variant
+    assign target = product.selected_or_first_available_variant
+  else
+    assign target = product
+  endif
+
+  if target == blank and price != blank
+    assign money_price = price | money
+  else
+    assign compare_at = target.compare_at_price
+    assign money_price = target.price | money
+  endif
+-%}
+
+<div class="price{% if compare_at > target.price %} price--sale{% endif %}">
+  {%- if product and product.price_varies and use_variant != true -%}
+    <span class="visually-hidden">{{ 'product.price' | t }}</span>
+    <span class="price__regular">
+      {{ 'product.from_price' | t: price: money_price }}
+    </span>
+  {%- else -%}
+    {%- if compare_at > target.price -%}
+      <span class="visually-hidden">{{ 'product.sale_price' | t }}</span>
+      <span class="price__sale">{{ money_price }}</span>
+      <span class="visually-hidden">{{ 'product.regular_price' | t }}</span>
+      <s class="price__compare">{{ compare_at | money }}</s>
+    {%- else -%}
+      <span class="visually-hidden">{{ 'product.price' | t }}</span>
+      <span class="price__regular">{{ money_price }}</span>
+    {%- endif -%}
+  {%- endif -%}
+</div>

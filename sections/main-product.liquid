@@ -1,0 +1,138 @@
+{%- assign current_variant = product.selected_or_first_available_variant -%}
+{%- assign product_form_id = 'ProductForm-' | append: section.id -%}
+
+<section class="product-page" data-product-section {{ section.shopify_attributes }}>
+  <div class="product-page__grid page-width">
+    <div class="product-gallery" data-gallery>
+      {%- if product.media.size > 0 -%}
+        <div class="product-gallery__stage" aria-label="{{ 'product.media' | t }}">
+          {%- for media in product.media -%}
+            <figure
+              class="product-gallery__item{% if forloop.first %} is-active{% endif %}"
+              data-media-id="{{ media.id }}"
+              {% unless forloop.first %}hidden{% endunless %}
+            >
+              {%- case media.media_type -%}
+                {%- when 'image' -%}
+                  {%- assign media_alt = media.alt | default: product.title -%}
+                  {{
+                    media
+                    | image_url: width: 1600
+                    | image_tag:
+                      loading: 'eager',
+                      widths: '400, 700, 1000, 1400, 1600',
+                      sizes: '(min-width: 900px) 50vw, 100vw',
+                      alt: media_alt
+                  }}
+                {%- when 'video' -%}
+                  {{ media | media_tag: image_size: '1024x' }}
+                {%- when 'external_video' -%}
+                  {{ media | external_video_tag }}
+                {%- when 'model' -%}
+                  {{ media | model_viewer_tag }}
+              {%- endcase -%}
+            </figure>
+          {%- endfor -%}
+        </div>
+        {%- if product.media.size > 1 -%}
+          <div class="product-gallery__thumbs" role="list">
+            {%- for media in product.media -%}
+              <button
+                class="product-gallery__thumb{% if forloop.first %} is-active{% endif %}"
+                type="button"
+                data-thumb-for="{{ media.id }}"
+                aria-label="{{ 'product.thumbnail' | t: index: forloop.index }}"
+              >
+                {%- if media.preview_image -%}
+                  {{ media.preview_image | image_url: width: 160 | image_tag: loading: 'lazy', alt: media.alt }}
+                {%- endif -%}
+              </button>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+      {%- else -%}
+        <div class="product-gallery__stage">
+          {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+        </div>
+      {%- endif -%}
+    </div>
+
+    <div class="product-info">
+      <p class="eyebrow">{{ product.vendor | default: shop.name | escape }}</p>
+      <h1 class="product-info__title">{{ product.title | escape }}</h1>
+      <div class="product-info__price" data-price>
+        {% render 'price', product: product, use_variant: true %}
+      </div>
+      {%- if cart.taxes_included -%}
+        <p class="product-info__tax">{{ 'product.tax_included' | t }}</p>
+      {%- endif -%}
+
+      {%- form 'product', product, id: product_form_id, class: 'product-form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+        <input type="hidden" name="id" value="{{ current_variant.id }}" data-variant-id>
+        {% render 'variant-picker', product: product %}
+
+        <div class="qty-field">
+          <label for="Quantity-{{ section.id }}">{{ 'product.quantity' | t }}</label>
+          <div class="qty-field__controls">
+            <button type="button" data-qty-change="-1" aria-label="{{ 'product.decrease' | t }}">−</button>
+            <input
+              id="Quantity-{{ section.id }}"
+              type="number"
+              name="quantity"
+              min="1"
+              value="1"
+              inputmode="numeric"
+            >
+            <button type="button" data-qty-change="1" aria-label="{{ 'product.increase' | t }}">+</button>
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          name="add"
+          class="btn btn--accent btn--full"
+          data-add-to-cart
+          data-add-label="{{ 'product.add_to_cart' | t }}"
+          data-sold-out="{{ 'product.sold_out' | t }}"
+          data-unavailable="{{ 'product.unavailable' | t }}"
+          {% unless current_variant.available %}disabled{% endunless %}
+        >
+          {%- if current_variant.available -%}
+            {{ 'product.add_to_cart' | t }}
+          {%- else -%}
+            {{ 'product.sold_out' | t }}
+          {%- endif -%}
+        </button>
+      {%- endform -%}
+
+      {%- if current_variant.sku != blank -%}
+        <p class="product-info__sku">{{ 'product.sku' | t }}: <span data-sku>{{ current_variant.sku }}</span></p>
+      {%- endif -%}
+
+      {%- if product.description != blank -%}
+        <div class="rte product-info__description">
+          <h2 class="product-info__desc-title">{{ 'product.description' | t }}</h2>
+          {{ product.description }}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+
+  <script type="application/json" data-product-json>
+    {{ product | json }}
+  </script>
+</section>
+
+{% schema %}
+{
+  "name": "Producto",
+  "tag": "section",
+  "class": "section-main-product",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Galería, variantes (talla/estilo) y alta al carrito de Shopify. El precio sale de Liquid, no del tema."
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,21 @@
+{
+  "current": {
+    "logo_width": 120,
+    "color_background": "#0c0c0c",
+    "color_foreground": "#f3eee6",
+    "color_muted": "#c4bfb4",
+    "color_accent": "#d6ff3c",
+    "color_accent_contrast": "#0c0c0c",
+    "color_border": "#3a3936",
+    "color_surface": "#161616",
+    "type_header_font": "oswald_n7",
+    "type_body_font": "ibm_plex_sans_n4",
+    "page_width": 1360,
+    "card_image_ratio": "portrait",
+    "social_instagram": "",
+    "social_tiktok": "",
+    "social_youtube": "",
+    "social_facebook": "",
+    "social_x": ""
+  }
+}

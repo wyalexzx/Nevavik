@@ -1,0 +1,16 @@
+<section class="error-404 section-pad" {{ section.shopify_attributes }}>
+  <div class="page-width error-404__inner">
+    <p class="eyebrow">404</p>
+    <h1>{{ '404.title' | t }}</h1>
+    <p>{{ '404.text' | t }}</p>
+    <a class="btn btn--accent" href="{{ routes.root_url }}">{{ '404.button' | t }}</a>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "404",
+  "tag": "section",
+  "class": "section-main-404"
+}
+{% endschema %}

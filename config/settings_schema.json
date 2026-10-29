@@ -1,0 +1,167 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Nevavik",
+    "theme_version": "1.0.0",
+    "theme_author": "Alejandro Marquez",
+    "theme_documentation_url": "https://github.com/wyalexzx/Nevavik",
+    "theme_support_url": "https://github.com/wyalexzx/Nevavik/issues"
+  },
+  {
+    "name": "Marca [PLACEHOLDER]",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Logo, favicon y nombre visibles. El copy de marca se edita en las secciones del editor, no aquí."
+      },
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo"
+      },
+      {
+        "type": "range",
+        "id": "logo_width",
+        "min": 40,
+        "max": 220,
+        "step": 4,
+        "unit": "px",
+        "label": "Ancho del logo",
+        "default": 120
+      },
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon"
+      }
+    ]
+  },
+  {
+    "name": "Colores",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Paleta base negro / blanco / neutros. Un único acento configurable."
+      },
+      {
+        "type": "color",
+        "id": "color_background",
+        "label": "Fondo",
+        "default": "#0c0c0c"
+      },
+      {
+        "type": "color",
+        "id": "color_foreground",
+        "label": "Texto",
+        "default": "#f3eee6"
+      },
+      {
+        "type": "color",
+        "id": "color_muted",
+        "label": "Texto secundario",
+        "default": "#c4bfb4"
+      },
+      {
+        "type": "color",
+        "id": "color_accent",
+        "label": "Acento",
+        "default": "#d6ff3c"
+      },
+      {
+        "type": "color",
+        "id": "color_accent_contrast",
+        "label": "Texto sobre acento",
+        "default": "#0c0c0c"
+      },
+      {
+        "type": "color",
+        "id": "color_border",
+        "label": "Bordes",
+        "default": "#3a3936"
+      },
+      {
+        "type": "color",
+        "id": "color_surface",
+        "label": "Superficie",
+        "default": "#161616"
+      }
+    ]
+  },
+  {
+    "name": "Tipografía",
+    "settings": [
+      {
+        "type": "font_picker",
+        "id": "type_header_font",
+        "label": "Títulos",
+        "default": "oswald_n7"
+      },
+      {
+        "type": "font_picker",
+        "id": "type_body_font",
+        "label": "Cuerpo",
+        "default": "ibm_plex_sans_n4"
+      }
+    ]
+  },
+  {
+    "name": "Maquetación",
+    "settings": [
+      {
+        "type": "range",
+        "id": "page_width",
+        "min": 1000,
+        "max": 1600,
+        "step": 20,
+        "unit": "px",
+        "label": "Ancho máximo",
+        "default": 1360
+      },
+      {
+        "type": "select",
+        "id": "card_image_ratio",
+        "label": "Proporción de imagen en tarjetas",
+        "options": [
+          { "value": "portrait", "label": "Vertical" },
+          { "value": "square", "label": "Cuadrada" },
+          { "value": "landscape", "label": "Horizontal" }
+        ],
+        "default": "portrait"
+      }
+    ]
+  },
+  {
+    "name": "Redes [PLACEHOLDER]",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Dejar vacío hasta tener URLs reales. El pie muestra [PLACEHOLDER] si faltan."
+      },
+      {
+        "type": "text",
+        "id": "social_instagram",
+        "label": "Instagram URL"
+      },
+      {
+        "type": "text",
+        "id": "social_tiktok",
+        "label": "TikTok URL"
+      },
+      {
+        "type": "text",
+        "id": "social_youtube",
+        "label": "YouTube URL"
+      },
+      {
+        "type": "text",
+        "id": "social_facebook",
+        "label": "Facebook URL"
+      },
+      {
+        "type": "text",
+        "id": "social_x",
+        "label": "X / Twitter URL"
+      }
+    ]
+  }
+]

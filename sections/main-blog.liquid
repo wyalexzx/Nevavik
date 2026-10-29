@@ -1,0 +1,40 @@
+{%- paginate blog.articles by 12 -%}
+  <section class="blog-page section-pad" {{ section.shopify_attributes }}>
+    <div class="page-width">
+      <header class="section-heading">
+        <p class="eyebrow">{{ shop.name }}</p>
+        <h1>{{ blog.title | escape }}</h1>
+      </header>
+      {%- if blog.articles.size > 0 -%}
+        <div class="blog-grid">
+          {%- for article in blog.articles -%}
+            <article class="blog-card">
+              {%- if article.image -%}
+                <a class="blog-card__media" href="{{ article.url }}">
+                  {{ article.image | image_url: width: 900 | image_tag: loading: 'lazy', alt: article.title }}
+                </a>
+              {%- endif -%}
+              <div class="blog-card__body">
+                <time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: '%d.%m.%Y' }}</time>
+                <h2><a href="{{ article.url }}">{{ article.title | escape }}</a></h2>
+                <p>{{ article.excerpt_or_content | strip_html | truncate: 160 }}</p>
+                <a class="text-link" href="{{ article.url }}">{{ 'blog.read' | t }}</a>
+              </div>
+            </article>
+          {%- endfor -%}
+        </div>
+        {% render 'pagination', paginate: paginate %}
+      {%- else -%}
+        <p class="placeholder-copy">{{ 'blog.empty' | t }}</p>
+      {%- endif -%}
+    </div>
+  </section>
+{%- endpaginate -%}
+
+{% schema %}
+{
+  "name": "Blog",
+  "tag": "section",
+  "class": "section-main-blog"
+}
+{% endschema %}

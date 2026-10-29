@@ -1,0 +1,6 @@
+# Shopify CLI 3.x environment for this theme.
+# Replace [PLACEHOLDER] with the store subdomain the owner provides.
+# Do not invent a .myshopify.com URL. Do not commit access tokens.
+
+[environments.development]
+store = "[PLACEHOLDER]"

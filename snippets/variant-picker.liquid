@@ -1,0 +1,26 @@
+{%- comment -%}
+  Native option pickers. JS maps them to a Shopify variant id.
+{%- endcomment -%}
+{%- unless product.has_only_default_variant -%}
+  <div class="variant-picker" data-variant-picker>
+    {%- for option in product.options_with_values -%}
+      <fieldset class="variant-picker__option" data-option-index="{{ forloop.index0 }}">
+        <legend>{{ 'product.choose_option' | t: name: option.name }}</legend>
+        <div class="variant-picker__values">
+          {%- for value in option.values -%}
+            {%- assign input_id = product.id | append: '-' | append: option.position | append: '-' | append: forloop.index -%}
+            <input
+              class="visually-hidden"
+              type="radio"
+              name="options[{{ option.name | escape }}]"
+              id="{{ input_id }}"
+              value="{{ value | escape }}"
+              {% if option.selected_value == value %}checked{% endif %}
+            >
+            <label class="variant-chip" for="{{ input_id }}">{{ value | escape }}</label>
+          {%- endfor -%}
+        </div>
+      </fieldset>
+    {%- endfor -%}
+  </div>
+{%- endunless -%}

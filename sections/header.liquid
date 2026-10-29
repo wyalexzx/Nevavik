@@ -1,0 +1,135 @@
+<header class="site-header{% if section.settings.sticky %} site-header--sticky{% endif %}" data-header {{ section.shopify_attributes }}>
+  <div class="site-header__inner page-width">
+    <button
+      class="icon-button site-header__menu-toggle"
+      type="button"
+      data-menu-toggle
+      aria-expanded="false"
+      aria-controls="NavDrawer"
+      aria-label="{{ 'header.menu' | t }}"
+    >
+      {% render 'icon', name: 'menu' %}
+    </button>
+
+    <a class="wordmark" href="{{ routes.root_url }}" aria-label="{{ shop.name }}">
+      {%- if settings.logo != blank -%}
+        <span class="wordmark__logo-wrap" style="max-width: {{ settings.logo_width }}px">
+          {{
+            settings.logo
+            | image_url: width: 400
+            | image_tag:
+              class: 'wordmark__logo',
+              widths: '80, 120, 160, 240, 320',
+              alt: shop.name
+          }}
+        </span>
+      {%- else -%}
+        <span class="wordmark__text">{{ shop.name }}</span>
+      {%- endif -%}
+    </a>
+
+    <nav class="nav-desktop" aria-label="{{ 'header.menu' | t }}">
+      {%- if section.settings.menu != blank -%}
+        <ul class="nav-desktop__list">
+          {%- for link in section.settings.menu.links -%}
+            <li>
+              <a
+                href="{{ link.url }}"
+                class="nav-desktop__link{% if link.active %} is-active{% endif %}"
+                {% if link.active %}aria-current="page"{% endif %}
+              >
+                {{ link.title | escape }}
+              </a>
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+    </nav>
+
+    <div class="site-header__actions">
+      <button
+        class="icon-button"
+        type="button"
+        data-search-toggle
+        aria-expanded="false"
+        aria-controls="SearchPanel"
+        aria-label="{{ 'header.search' | t }}"
+      >
+        {% render 'icon', name: 'search' %}
+      </button>
+      <a class="icon-button cart-link" href="{{ routes.cart_url }}" aria-label="{{ 'header.cart' | t }}">
+        {% render 'icon', name: 'cart' %}
+        <span class="cart-link__count" aria-hidden="true">{{ cart.item_count }}</span>
+        <span class="visually-hidden">{{ 'header.cart_count' | t: count: cart.item_count }}</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="nav-drawer" id="NavDrawer" data-menu-drawer hidden>
+    <div class="nav-drawer__panel" role="dialog" aria-modal="true" aria-label="{{ 'header.menu' | t }}">
+      <div class="nav-drawer__top">
+        <p class="nav-drawer__kicker">{{ shop.name }}</p>
+        <button class="icon-button" type="button" data-menu-close aria-label="{{ 'accessibility.close' | t }}">
+          {% render 'icon', name: 'close' %}
+        </button>
+      </div>
+      {%- if section.settings.menu != blank -%}
+        <ul class="nav-drawer__list">
+          {%- for link in section.settings.menu.links -%}
+            <li>
+              <a href="{{ link.url }}" class="nav-drawer__link{% if link.active %} is-active{% endif %}">
+                {{ link.title | escape }}
+                {% render 'icon', name: 'arrow' %}
+              </a>
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- else -%}
+        <p class="placeholder-copy">[PLACEHOLDER]</p>
+      {%- endif -%}
+    </div>
+  </div>
+
+  <div class="search-panel" id="SearchPanel" data-search-panel hidden>
+    <form class="search-panel__form page-width" action="{{ routes.search_url }}" method="get" role="search">
+      <label class="visually-hidden" for="HeaderSearch">{{ 'search.title' | t }}</label>
+      <input type="hidden" name="type" value="product">
+      <input
+        id="HeaderSearch"
+        class="search-panel__input"
+        type="search"
+        name="q"
+        placeholder="{{ 'search.placeholder' | t }}"
+        autocomplete="off"
+      >
+      <button class="btn btn--accent" type="submit">{{ 'search.submit' | t }}</button>
+      <button class="icon-button" type="button" data-search-close aria-label="{{ 'accessibility.close' | t }}">
+        {% render 'icon', name: 'close' %}
+      </button>
+    </form>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Cabecera",
+  "class": "section-header",
+  "enabled_on": {
+    "groups": ["header"]
+  },
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menú",
+      "default": "main-menu"
+    },
+    {
+      "type": "checkbox",
+      "id": "sticky",
+      "label": "Cabecera fija",
+      "default": true
+    }
+  ]
+}
+{% endschema %}
